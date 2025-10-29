@@ -47,18 +47,34 @@ function App() {
     }
   };
 
+  const handleClearButton = () => {
+    setSearchInput("");
+  };
+
   return (
     <div className="app">
       <NavBar />
       <div className="app-body">
         <Header loading={loading} data={searchInput.length > 0 ? filteredResult : list} />
-        <div>
-          <span>🔎</span>
+        <div className="search-container">
+           <div className="search-bar">
+          <span className="search-icon">🔎</span>
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search Pokémon by name..."
+            value={searchInput}
             onChange={(inputString) => searchItems(inputString.target.value)}
+            className="search-input"
           />
+          {searchInput && (
+            <button 
+              onClick={handleClearButton}
+              className="clear-button"
+            >
+              ✕
+            </button>
+          )}
+          </div>
         </div>
         <List loading={loading} data={searchInput.length > 0 ? filteredResult : list} />
       </div>
