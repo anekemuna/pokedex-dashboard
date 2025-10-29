@@ -4,8 +4,8 @@ const Card = ({ title, value, loading }) => {
   return (
     <div className="card">
       <div className="card-container">
-        <p>{title}</p>
-        <h3>{loading ? 'Loading...' : value}</h3>
+        <p className="card-title">{title}</p>
+        <h3 className="card-value">{loading ? 'Loading...' : value}</h3>
       </div>
     </div>
   );
