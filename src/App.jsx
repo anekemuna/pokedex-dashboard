@@ -30,9 +30,9 @@ function App() {
 
   return (
     <div className="app">
-      <Header loading={loading} data={list}/>
+      <NavBar />
       <div className="app-body">
-        <NavBar />
+        <Header loading={loading} data={list} />
         <List loading={loading} data={list} />
       </div>
     </div>
