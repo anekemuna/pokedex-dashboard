@@ -45,7 +45,7 @@ const Header = ({ loading, data }) => {
           </a>
         </em>
         <div className="stats-container">
-        <Card title={"Total Pokemon"} value={loading ? 'Loading...' : stats.totalCount} />
+        <Card title={"No. Pokemons"} value={loading ? 'Loading...' : stats.totalCount} />
         <Card title={"Avg Height"} value={loading ? 'Loading...' : `${stats.avgHeight} dm`} />
         <Card title={"Avg Weight"} value={loading ? 'Loading...' :  `${stats.avgWeight} hg`} />
         </div>
