@@ -43,10 +43,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-[![Walkthrough](https://img.youtube.com/vi/jfVPr4m4xqM/0.jpg)](https://www.youtube.com/watch?v=jfVPr4m4xqM)
+[![Walkthrough](https://img.youtube.com/vi/UgU458DaYfA/0.jpg)](https://www.youtube.com/watch?v=UgU458DaYfA)
 
 
-Walkthrough Link: [https://youtu.be/jfVPr4m4xqM]
+Walkthrough Link: [https://youtu.be/UgU458DaYfA]
 
 Walkthrough created with:
 [Youtube](https://www.youtube.com/)
