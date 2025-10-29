@@ -7,13 +7,23 @@ import List from "./components/List";
 
 function App() {
   const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchPokemon = async () => {
-      const API = "https://pokeapi.co/api/v2/pokemon?limit=150";
+      const API = "https://pokeapi.co/api/v2/pokemon?limit=10";
 
       const response = await fetch(API);
       const json = await response.json();
-      setList(json.results);
+
+      const jsonDetails = await Promise.all(
+          json.results.map(async (p) => {
+            const res = await fetch(p.url);
+            return await res.json();
+          })
+        );
+
+      setList(jsonDetails);
+      setLoading(false)
     };
     fetchPokemon().catch(console.error);
   }, []);
@@ -25,7 +35,7 @@ function App() {
         <NavBar />
       </aside>
       <Card />
-      <List data={list} />
+      <List loading={loading} data={list} />
     </div>
   );
 }
