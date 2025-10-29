@@ -34,7 +34,6 @@ function App() {
       <aside>
         <NavBar />
       </aside>
-      <Card />
       <List loading={loading} data={list} />
     </div>
   );
