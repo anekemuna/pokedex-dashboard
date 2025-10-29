@@ -2,7 +2,7 @@
 
 Submitted by: **Munachimso Aneke**
 
-This web app: **Shows details of Pokemons called from the Pokemon API: [PokéApi](https://pokeapi.co/)**
+This web app: **Shows details of Pokemons called from the Pokémon API: [PokéApi](https://pokeapi.co/)**
 
 Time spent: **5** hours spent in total
 
