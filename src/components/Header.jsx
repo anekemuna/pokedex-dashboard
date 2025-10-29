@@ -41,13 +41,13 @@ const Header = ({ loading, data }) => {
         <em>
           Data sourced from the PokéAPI:
           <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">
-            Here
+            {" "}Here
           </a>
         </em>
         <div className="stats-container">
-        <Card title={"No. Pokemons"} value={loading ? 'Loading...' : stats.totalCount} />
-        <Card title={"Avg Height"} value={loading ? 'Loading...' : `${stats.avgHeight} dm`} />
-        <Card title={"Avg Weight"} value={loading ? 'Loading...' :  `${stats.avgWeight} hg`} />
+        <Card title={"No. Pokemons"} value={stats.totalCount} loading={loading}/>
+        <Card title={"Avg Height"} value={`${stats.avgHeight} dm`} loading={loading}/>
+        <Card title={"Avg Weight"} value={`${stats.avgWeight} hg`} loading={loading}/>
         </div>
       </div>
     </>
