@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header loading={loading} data={list}/>
       <div className="app-body">
         <NavBar />
         <List loading={loading} data={list} />
