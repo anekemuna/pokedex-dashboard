@@ -4,7 +4,7 @@ Submitted by: **Munachimso Aneke**
 
 This web app: **Shows details of Pokemons called from the Pokémon API: [PokéApi](https://pokeapi.co/)**
 
-Time spent: **8.5** hours spent in total
+Time spent: **10.5** hours spent in total
 
 ## Required Features
 
