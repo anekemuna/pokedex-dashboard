@@ -159,6 +159,17 @@
   font-size: 0.85rem;
 }
 
+.no-results {
+  text-align: center;
+  color: #ecf0f1;
+}
+
+.no-results p:first-child {
+  font-size: 1.2rem;
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+
 /* NavBar.jsx */
 /* .navbar {
   min-width: 150px;

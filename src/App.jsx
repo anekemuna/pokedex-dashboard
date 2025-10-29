@@ -85,6 +85,8 @@ function App() {
         <List
           loading={loading}
           data={searchInput.length > 0 ? filteredResult : list}
+          hasSearchQuery={searchInput.length > 0}
+          searchQuery = {searchInput}
         />
       </div>
     </div>
