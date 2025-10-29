@@ -1,4 +1,18 @@
-/* App * /
+/* App.jsx */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  padding: 20px;
+}
+
 /* List.jsx Style */
 .list {
   padding: 20px;
@@ -83,6 +97,8 @@
   font-weight: 600;
   color: #3498db;
   border-left: 4px solid #3498db;
+  width: 250px;
+  flex-shrink: 0;
 }
 
 .nav-list {
@@ -97,7 +113,7 @@
   transition: all 0.2s ease;
   border-radius: 6px;
   margin-bottom: 5px;
-  color: #ecf0f1;
+  color:  rgb(52, 152, 219, 0.5);
 }
 
 .nav-list li:hover {
