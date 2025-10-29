@@ -1,8 +1,8 @@
-# Web Development Project 5 - *Name of App Here*
+# Web Development Project 5 - *Pokédex Dashboard*
 
 Submitted by: **Munachimso Aneke**
 
-This web app: **insert description**
+This web app: **Shows details of Pokemons called from the Pokemon API: [PokéApi](https://pokeapi.co/)**
 
 Time spent: **5** hours spent in total
 
