@@ -11,13 +11,16 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [searchInput, setSearchInput] = useState("");
 
+  // Fetches data
   useEffect(() => {
     const fetchPokemon = async () => {
       const API = "https://pokeapi.co/api/v2/pokemon?limit=20";
 
       const response = await fetch(API);
-      const json = await response.json();
+      const json = await response.json(); // {name, url}
 
+      // because url is not a good feature,...
+      // ... uses the url to actually fetch the pokemon's data
       const jsonDetails = await Promise.all(
         json.results.map(async (p) => {
           const res = await fetch(p.url);
@@ -31,6 +34,7 @@ function App() {
     fetchPokemon().catch(console.error);
   }, []);
 
+  // searches data by name or type
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
     if (searchValue !== "") {
@@ -47,6 +51,7 @@ function App() {
     }
   };
 
+  // clears search field
   const handleClearButton = () => {
     setSearchInput("");
   };
@@ -55,28 +60,32 @@ function App() {
     <div className="app">
       <NavBar />
       <div className="app-body">
-        <Header loading={loading} data={searchInput.length > 0 ? filteredResult : list} />
+        <Header
+          loading={loading}
+          data={searchInput.length > 0 ? filteredResult : list}
+        />
+        {/* search logic/ui */}
         <div className="search-container">
-           <div className="search-bar">
-          <span className="search-icon">🔎</span>
-          <input
-            type="text"
-            placeholder="Search Pokémon by name..."
-            value={searchInput}
-            onChange={(inputString) => searchItems(inputString.target.value)}
-            className="search-input"
-          />
-          {searchInput && (
-            <button 
-              onClick={handleClearButton}
-              className="clear-button"
-            >
-              ✕
-            </button>
-          )}
+          <div className="search-bar">
+            <span className="search-icon">🔎</span>
+            <input
+              type="text"
+              placeholder="Search Pokémon by name..."
+              value={searchInput}
+              onChange={(inputString) => searchItems(inputString.target.value)}
+              className="search-input"
+            />
+            {searchInput && (
+              <button onClick={handleClearButton} className="clear-button">
+                ✕
+              </button>
+            )}
           </div>
         </div>
-        <List loading={loading} data={searchInput.length > 0 ? filteredResult : list} />
+        <List
+          loading={loading}
+          data={searchInput.length > 0 ? filteredResult : list}
+        />
       </div>
     </div>
   );
