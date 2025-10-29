@@ -16,14 +16,14 @@ function App() {
       const json = await response.json();
 
       const jsonDetails = await Promise.all(
-          json.results.map(async (p) => {
-            const res = await fetch(p.url);
-            return await res.json();
-          })
-        );
+        json.results.map(async (p) => {
+          const res = await fetch(p.url);
+          return await res.json();
+        })
+      );
 
       setList(jsonDetails);
-      setLoading(false)
+      setLoading(false);
     };
     fetchPokemon().catch(console.error);
   }, []);
@@ -31,10 +31,10 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <aside>
+      <div className="app-body">
         <NavBar />
-      </aside>
-      <List loading={loading} data={list} />
+        <List loading={loading} data={list} />
+      </div>
     </div>
   );
 }
