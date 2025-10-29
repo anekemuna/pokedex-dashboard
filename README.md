@@ -4,7 +4,7 @@ Submitted by: **Munachimso Aneke**
 
 This web app: **Shows details of Pokemons called from the Pokémon API: [PokéApi](https://pokeapi.co/)**
 
-Time spent: **7.5** hours spent in total
+Time spent: **8.5** hours spent in total
 
 ## Required Features
 
@@ -20,7 +20,7 @@ The following **required** functionality is completed:
     - *No. Pokemons: Number of Pokemon displayed*
     - *Avg Height: Average height of all Pokemons displayed in dm*
     - *Avg Weight: Average weight of all Pokemons displayed in hg*
-- [ ] **A search bar allows the user to search for an item in the fetched data**
+- [x] **A search bar allows the user to search for an item in the fetched data**
   - The search bar **correctly** filters items in the list, only displaying items matching the search query
   - The list of results dynamically updates as the user types into the search bar
 - [ ] **An additional filter allows the user to restrict displayed items by specified categories**
