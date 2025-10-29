@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
-import Card from "./components/Card";
+import Filter from "./components/Filter";
 import List from "./components/List";
 
 function App() {
@@ -11,10 +11,16 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [searchInput, setSearchInput] = useState("");
 
+  const [filters, setFilters] = useState({
+    type: "",
+    heightRange: [0, 50],
+    weightRange: [0, 1000],
+  });
+
   // Fetches data
   useEffect(() => {
     const fetchPokemon = async () => {
-      const API = "https://pokeapi.co/api/v2/pokemon?limit=20";
+      const API = "https://pokeapi.co/api/v2/pokemon?limit=30";
 
       const response = await fetch(API);
       const json = await response.json(); // {name, url}
@@ -37,24 +43,95 @@ function App() {
   // searches data by name or type
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
-    if (searchValue !== "") {
-      const filteredPokemon = list.filter(
-        (pokemon) =>
-          pokemon.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-          pokemon.types.some((type) =>
-            type.type.name.toLowerCase().includes(searchValue.toLowerCase())
-          )
-      );
-      setFilteredResult(filteredPokemon);
-    } else {
-      setFilteredResult(list);
-    }
+    //? Moved logic into applyFilters() in second useEffec()
+    // if (searchValue !== "") {
+    //   const filteredPokemon = list.filter(
+    //     (pokemon) =>
+    //       pokemon.name.toLowerCase().includes(searchValue.toLowerCase())
+    //   );
+    //   setFilteredResult(filteredPokemon);
+    // } else {
+    //   setFilteredResult(list);
+    // }
   };
 
   // clears search field
   const handleClearButton = () => {
     setSearchInput("");
   };
+
+  const updateFilters = (filterType, value) => {
+    if (filterType === "clear") {
+      // clear all filters
+      setFilters({
+        type: "",
+        heightRange: [0, 50],
+        weightRange: [0, 1000],
+      });
+    } else {
+      // Handle filter update
+      const newFilters = {
+        ...filters,
+        [filterType]: value,
+      };
+      setFilters(newFilters);
+    }
+  };
+
+  // get pokemon types
+  const pokemonTypes = [
+    ...new Set(
+      list.flatMap((pokemon) => pokemon.types?.map((t) => t.type.name) || [])
+    ),
+  ].sort();
+
+  useEffect(() => {
+    // applies filters
+    const applyFilters = () => {
+      let result = list;
+
+      // Apply search first
+      if (searchInput) {
+        result = result.filter((pokemon) =>
+          pokemon.name.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      }
+
+      // Apply type filter
+      if (filters.type) {
+        result = result.filter((pokemon) =>
+          pokemon.types.some((type) => type.type.name === filters.type)
+        );
+      }
+
+      // Apply height range filter
+      result = result.filter(
+        (pokemon) =>
+          pokemon.height >= filters.heightRange[0] &&
+          pokemon.height <= filters.heightRange[1]
+      );
+
+      // Apply weight range filter
+      result = result.filter(
+        (pokemon) =>
+          pokemon.weight >= filters.weightRange[0] &&
+          pokemon.weight <= filters.weightRange[1]
+      );
+
+      setFilteredResult(result);
+    };
+    if (list.length > 0) {
+      applyFilters();
+    }
+  }, [list, searchInput, filters]); // updates when list, searchInput, and filters change
+
+  // check if filters have been applied
+  const hasActiveFilters =
+    filters.type ||
+    filters.heightRange[0] > 0 ||
+    filters.heightRange[1] < 50 ||
+    filters.weightRange[0] > 0 ||
+    filters.weightRange[1] < 1000;
 
   return (
     <div className="app">
@@ -82,11 +159,16 @@ function App() {
             )}
           </div>
         </div>
+        <Filter
+          filters={filters}
+          updateFilters={updateFilters}
+          pokemonTypes={pokemonTypes}
+        />
         <List
           loading={loading}
-          data={searchInput.length > 0 ? filteredResult : list}
+          data={searchInput || hasActiveFilters ? filteredResult : list}
           hasSearchQuery={searchInput.length > 0}
-          searchQuery = {searchInput}
+          searchQuery={searchInput}
         />
       </div>
     </div>
