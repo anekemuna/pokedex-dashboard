@@ -23,30 +23,38 @@ The following **required** functionality is completed:
 - [x] **A search bar allows the user to search for an item in the fetched data**
   - The search bar **correctly** filters items in the list, only displaying items matching the search query
   - The list of results dynamically updates as the user types into the search bar
-- [ ] **An additional filter allows the user to restrict displayed items by specified categories**
+- [x] **An additional filter allows the user to restrict displayed items by specified categories**
   - The filter restricts items in the list using a **different attribute** than the search bar 
   - The filter **correctly** filters items in the list, only displaying items matching the filter attribute in the dashboard
   - The dashboard list dynamically updates as the user adjusts the filter
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [ ] Filters use different input types
+- [x] Multiple filters can be applied simultaneously
+- [x] Filters use different input types
   - e.g., as a text input, a dropdown or radio selection, and/or a slider
-- [ ] The user can enter specific bounds for filter values
+- [x] The user can enter specific bounds for filter values
 
-The following **additional** features are implemented:
+<!-- The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+* [ ] List anything else that you added to improve the site's functionality! -->
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+[![Walkthrough](https://img.youtube.com/vi/jfVPr4m4xqM/0.jpg)](https://www.youtube.com/watch?v=jfVPr4m4xqM)
+
+
+Walkthrough Link: [https://youtu.be/jfVPr4m4xqM]
+
+Walkthrough created with:
+[Youtube](https://www.youtube.com/)
+
+<!-- <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+<!-- GIF created with ...   -->
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -54,11 +62,13 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+- Figuring out how to call the Pokemon data.
+  - The initial pokeapi call only returns the name, and url. I had to add another fetch for each pokemon in the initial call.
+- Implementing the filter functionality involved a lot more refactoring than I expected and I got stuck a couple times.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2025] [Munachimso Aneke]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
