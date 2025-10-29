@@ -12,10 +12,10 @@ const NavBar = () => {
           <span className="nav-icon">📊</span> Overview
         </li>
         <li className="nav-item">
-          <span className="nav-icon">🔍</span> Search
+          <span className="nav-icon">🔎</span> Search
         </li>
         <li className="nav-item">
-          <span className="nav-icon">📖</span> About
+          <span className="nav-icon">ℹ️</span> About
         </li>
       </ul>
     </div>
