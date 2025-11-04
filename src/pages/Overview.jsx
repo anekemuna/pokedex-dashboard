@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
-import "./App.css";
-import Header from "./components/Header";
-import NavBar from "./components/NavBar";
-import Filter from "./components/Filter";
-import List from "./components/List";
-import Overview from "./pages/Overview";
+import Header from "../components/Header";
+import NavBar from "../components/NavBar";
+import Filter from "../components/Filter";
+import List from "../components/List";
 
-function App() {
+const Overview = () => {
   const [list, setList] = useState([]);
   const [filteredResult, setFilteredResult] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -136,9 +134,45 @@ function App() {
 
   return (
     <div className="app">
-      <Overview />
+      <NavBar />
+      <div className="app-body">
+        <Header
+          loading={loading}
+          data={searchInput.length > 0 ? filteredResult : list}
+        />
+        {/* search logic/ui */}
+        <div className="search-container">
+          <div className="search-bar">
+            <span className="search-icon">🔎</span>
+            <input
+              type="text"
+              placeholder="Search Pokémon by name..."
+              value={searchInput}
+              onChange={(inputString) => searchItems(inputString.target.value)}
+              className="search-input"
+            />
+            {searchInput && (
+              <button onClick={handleClearButton} className="clear-button">
+                ✕
+              </button>
+            )}
+          </div>
+        </div>
+        <Filter
+          filters={filters}
+          updateFilters={updateFilters}
+          pokemonTypes={pokemonTypes}
+        />
+        <List
+          loading={loading}
+          data={searchInput || hasActiveFilters ? filteredResult : list}
+          hasSearchQuery={searchInput.length > 0}
+          searchQuery={searchInput}
+        />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Overview;
+
