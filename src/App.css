@@ -408,3 +408,14 @@
 .clear-btn:hover {
   background: rgba(231, 76, 60, 0.3);
 }
+
+@media (prefers-color-scheme: light) {
+  .search-input, .filter-group label, .filter-group select {
+    color: rgb(94, 94, 94);
+  }
+
+  .search-input::placeholder {
+    color: rgb(94, 94, 94, 0.6);
+  }
+
+}
