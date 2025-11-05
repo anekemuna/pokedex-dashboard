@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import SummaryStats from "../components/SummaryStats";
 import Filter from "../components/Filter";
 import List from "../components/List";
+import Charts from "../components/Charts";
 
 const Overview = () => {
   const [list, setList] = useState([]);
   const [filteredResult, setFilteredResult] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchInput, setSearchInput] = useState("");
+  const [showCharts, setShowCharts] = useState(true); // toggle's charts
 
   const [filters, setFilters] = useState({
     type: "",
@@ -131,44 +133,78 @@ const Overview = () => {
     filters.weightRange[0] > 0 ||
     filters.weightRange[1] < 1000;
 
+  const toggleCharts = () => {
+    setShowCharts(!showCharts);
+  };
+
   return (
     <div className="overview">
-        <SummaryStats
-          loading={loading}
-          data={searchInput.length > 0 ? filteredResult : list}
-        />
-        {/* search logic/ui */}
-        <div className="search-container">
-          <div className="search-bar">
-            <span className="search-icon">🔎</span>
-            <input
-              type="text"
-              placeholder="Search Pokémon by name..."
-              value={searchInput}
-              onChange={(inputString) => searchItems(inputString.target.value)}
-              className="search-input"
+      <SummaryStats
+        loading={loading}
+        data={searchInput.length > 0 ? filteredResult : list}
+      />
+      {/* search logic/ui */}
+      <div className="search-container">
+        <div className="search-bar">
+          <span className="search-icon">🔎</span>
+          <input
+            type="text"
+            placeholder="Search Pokémon by name..."
+            value={searchInput}
+            onChange={(inputString) => searchItems(inputString.target.value)}
+            className="search-input"
+          />
+          {searchInput && (
+            <button onClick={handleClearButton} className="clear-button">
+              ✕
+            </button>
+          )}
+        </div>
+        <button
+          onClick={toggleCharts}
+          className={`charts-toggle ${showCharts ? "active" : ""}`}
+        >
+          {showCharts ? "Hide Charts" : "Show Charts"}
+        </button>
+      </div>
+      <Filter
+        filters={filters}
+        updateFilters={updateFilters}
+        pokemonTypes={pokemonTypes}
+      />
+
+      {/* Replace the <List> component with this conditional layout */}
+      {showCharts ? (
+        <div className="list-and-charts">
+          <div className="list-section">
+            <List
+              loading={loading}
+              data={searchInput || hasActiveFilters ? filteredResult : list}
+              hasSearchQuery={searchInput.length > 0}
+              searchQuery={searchInput}
             />
-            {searchInput && (
-              <button onClick={handleClearButton} className="clear-button">
-                ✕
-              </button>
-            )}
+          </div>
+          <div className="charts-section">
+            <div className="charts-content"> 
+              <Charts 
+                data={searchInput || hasActiveFilters ? filteredResult : list}
+                loading={loading}
+              />
+            </div>
           </div>
         </div>
-        <Filter
-          filters={filters}
-          updateFilters={updateFilters}
-          pokemonTypes={pokemonTypes}
-        />
-        <List
-          loading={loading}
-          data={searchInput || hasActiveFilters ? filteredResult : list}
-          hasSearchQuery={searchInput.length > 0}
-          searchQuery={searchInput}
-        />
+      ) : (
+        <div className="list-alone">
+          <List
+            loading={loading}
+            data={searchInput || hasActiveFilters ? filteredResult : list}
+            hasSearchQuery={searchInput.length > 0}
+            searchQuery={searchInput}
+          />
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default Overview;
-
