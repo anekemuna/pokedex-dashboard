@@ -283,15 +283,75 @@
 }
 
 /* About.jsx */
-.about,
+.about {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-body h1 {
+  color: #ffcb05;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.about-section {
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #3498db;
+}
+.about-section h2 {
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.about-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-section li {
+  margin-bottom: 8px;
+  padding: 8px 0;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tag {
+  background: rgba(52, 152, 219, 0.2);
+  color: #3498db;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.about a {
+  color: #ffcb05;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.about a:hover {
+  text-decoration: underline;
+}
+
+/* SummaryStats.jsx */
 .summary-stats {
   width: 100%;
   max-width: 1000px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-/* SummaryStats.jsx */
 .stats-container {
   display: flex;
   gap: 20px;
@@ -418,7 +478,7 @@
   }
   .card,
   .filter,
-  .search-bar {
+  .search-bar, .about-section {
     background: rgba(100, 99, 99, 0.05);
   }
 }
