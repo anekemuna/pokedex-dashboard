@@ -2,7 +2,7 @@
 
 Submitted by: **Munachimso Aneke**
 
-This web app: **Shows details and stats of Pokémons called from the Pokémon API: [PokéApi](https://pokeapi.co/)**
+This web app: **A dashboard of Pokémons sourced from the Pokémon API: [PokéApi](https://pokeapi.co/). Features a table of the first 30 Pokémons, filtering and searching functionality, a pie chart, and a bar chart**
 
 Time spent: **11.5** hours spent in total
 
@@ -34,12 +34,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-Here's a walkthrough of implemented user stories:
-
-[![Walkthrough](https://img.youtube.com/vi/UgU458DaYfA/0.jpg)](https://www.youtube.com/watch?v=UgU458DaYfA)
+[![Walkthrough](https://img.youtube.com/vi/w-fDAgYkQas/0.jpg)](https://www.youtube.com/watch?v=w-fDAgYkQas)
 
 
-Walkthrough Link: [https://youtu.be/UgU458DaYfA]
+Walkthrough Link: [https://youtu.be/w-fDAgYkQas]
 
 Walkthrough created with:
 [Youtube](https://www.youtube.com/)
@@ -55,7 +53,9 @@ Walkthrough created with:
 
 ## Notes
 
-One major challenge I faced was styling
+- One major challenge I faced was with styling. 
+  - I kept adding styling to the same CSS file. By the time I had gotten to styling the detail page, I used the same CSS selectors already existing and started having clashing styles. In the future, I will split the CSS into smaller files for each component.
+- Creating the Charts. I got stuck a couple times while working on the charts and making the layouts more user friendly.
 
 
 ## License
