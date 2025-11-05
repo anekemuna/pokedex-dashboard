@@ -281,6 +281,29 @@
   border-left-color: #ffcb05;
 }
 
+/* NavLink styling */
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+}
+
+.nav-link.active {
+  background: rgba(255, 203, 5, 0.1);
+  color: #ffcb05;
+}
+
+/* Apply active state to parent nav-item when NavLink is active */
+.nav-item:has(.nav-link.active) {
+  background: rgba(255, 203, 5, 0.1);
+  color: #ffcb05;
+  border-left-color: #ffcb05;
+}
+
 .nav-icon {
   font-size: 1.1rem;
   display: inline-block;
@@ -289,7 +312,8 @@
 }
 
 /* About.jsx */
-.about, .summary-stats {
+.about,
+.summary-stats {
   width: 100%;
   max-width: 1000px;
   text-align: center;
@@ -421,7 +445,9 @@
   .search-input::placeholder {
     color: rgb(94, 94, 94, 0.6);
   }
-  .card, .filter, .search-bar {
+  .card,
+  .filter,
+  .search-bar {
     background: rgba(100, 99, 99, 0.05);
   }
 }
