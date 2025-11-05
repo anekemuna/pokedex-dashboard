@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 
-const Header = ({ loading, data }) => {
+const SummaryStats = ({ loading, data }) => {
   // calculate summary stats
   const calculateStats = () => {
     if (!data || data.length === 0) {
@@ -33,17 +33,7 @@ const Header = ({ loading, data }) => {
 
   return (
     <>
-      <div className="header">
-        <h1>Pokédex Dashboard</h1>
-        <h3>
-          <em>Displays a list of Pokémons with their key details.</em>
-        </h3>
-        <em>
-          Data sourced from the PokéAPI:
-          <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">
-            {" "}Here
-          </a>
-        </em>
+      <div className="summary-stats">
         <div className="stats-container">
         <Card title={"No. Pokemons"} value={stats.totalCount} loading={loading}/>
         <Card title={"Avg Height"} value={`${stats.avgHeight} dm`} loading={loading}/>
@@ -54,4 +44,4 @@ const Header = ({ loading, data }) => {
   );
 };
 
-export default Header;
+export default SummaryStats;

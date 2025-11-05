@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
+import SummaryStats from "../components/SummaryStats";
 import Filter from "../components/Filter";
 import List from "../components/List";
 
@@ -134,7 +133,7 @@ const Overview = () => {
 
   return (
     <div className="overview">
-        <Header
+        <SummaryStats
           loading={loading}
           data={searchInput.length > 0 ? filteredResult : list}
         />

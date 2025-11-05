@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Layout from "./routes/Layout.jsx";
 import NotFound from "./routes/NotFound.jsx";
 import Overview from "./pages/Overview.jsx";
+import About from "./pages/About.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -13,6 +14,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Overview />} />
+          <Route path="about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
