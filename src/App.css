@@ -160,6 +160,15 @@
   display: inline-block;
   font-size: 0.85rem;
 }
+.pokemon-view-btn {
+  border-width: 1.5px;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.pokemon-view-btn:hover {
+  border-color: #ffcb05;
+  transform: translateY(-1.5px);
+}
 
 .no-results {
   text-align: center;

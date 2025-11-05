@@ -57,7 +57,7 @@ const List = ({ loading, data, hasSearchQuery, searchQuery }) => {
               </td>
               <td>{pokemon.height}</td>
               <td>{pokemon.weight}</td>
-              <td><Link to={`/pokemonDetails/${pokemon.id}`} key={pokemon.id}><button>View</button></Link></td>
+              <td><Link to={`/pokemonDetails/${pokemon.id}`} key={pokemon.id}><button className="pokemon-view-btn">View</button></Link></td>
             </tr>
           ))}
         </tbody>
