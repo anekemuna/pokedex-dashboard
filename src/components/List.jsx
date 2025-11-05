@@ -26,7 +26,6 @@ const List = ({ loading, data, hasSearchQuery, searchQuery }) => {
 
   return (
     <div className="list">
-      <h2>Pokédex</h2>
       <table className="pokemon-table">
         <thead>
           <tr>
