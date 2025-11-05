@@ -56,6 +56,7 @@ Walkthrough created with:
 - One major challenge I faced was with styling. 
   - I kept adding styling to the same CSS file. By the time I had gotten to styling the detail page, I used the same CSS selectors already existing and started having clashing styles. In the future, I will split the CSS into smaller files for each component.
 - Creating the Charts. I got stuck a couple times while working on the charts and making the layouts more user friendly.
+- I did not end up implementing a separate search page.
 
 
 ## License
