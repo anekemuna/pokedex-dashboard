@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router";
 
 const List = ({ loading, data, hasSearchQuery, searchQuery }) => {
   // handles loading state
@@ -36,6 +36,7 @@ const List = ({ loading, data, hasSearchQuery, searchQuery }) => {
             <th>Type</th>
             <th>Height</th>
             <th>Weight</th>
+            <th>Details</th>
           </tr>
         </thead>
         <tbody>
@@ -57,6 +58,7 @@ const List = ({ loading, data, hasSearchQuery, searchQuery }) => {
               </td>
               <td>{pokemon.height}</td>
               <td>{pokemon.weight}</td>
+              <td><Link to={`/pokemonDetails/${pokemon.id}`} key={pokemon.id}><button>View</button></Link></td>
             </tr>
           ))}
         </tbody>
