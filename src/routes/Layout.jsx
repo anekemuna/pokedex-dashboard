@@ -1,10 +1,11 @@
 import React from "react";
 import { Outlet, Link } from "react-router";
+import NavBar from "../components/NavBar";
 
 const Layout = () => {
   return (
     <div className="layout">
-        <h4>Checking Layout and Routing works now </h4>
+      <NavBar />
       <Outlet />
     </div>
   );

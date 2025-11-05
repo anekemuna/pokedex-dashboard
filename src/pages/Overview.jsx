@@ -133,9 +133,7 @@ const Overview = () => {
     filters.weightRange[1] < 1000;
 
   return (
-    <div className="app">
-      <NavBar />
-      <div className="app-body">
+    <div className="overview">
         <Header
           loading={loading}
           data={searchInput.length > 0 ? filteredResult : list}
@@ -169,7 +167,6 @@ const Overview = () => {
           hasSearchQuery={searchInput.length > 0}
           searchQuery={searchInput}
         />
-      </div>
     </div>
   );
 }
