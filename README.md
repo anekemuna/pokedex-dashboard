@@ -4,7 +4,7 @@ Submitted by: **Munachimso Aneke**
 
 This web app: **Shows details and stats of Pokémons called from the Pokémon API: [PokéApi](https://pokeapi.co/)**
 
-Time spent: **8** hours spent in total
+Time spent: **11.5** hours spent in total
 
 ## Required Features
 
@@ -17,7 +17,7 @@ The following **required** functionality is completed:
   - *To ensure an accurate grade, your sidebar **must** be viewable when showing the details view in your recording.*
 - [x] **Each detail view of an item has a direct, unique URL link to that item’s detail view page**
   -  *To ensure an accurate grade, the URL/address bar of your web browser **must** be viewable in your recording.*
-- [ ] **The app includes at least two unique charts developed using the fetched data that tell an interesting story**
+- [x] **The app includes at least two unique charts developed using the fetched data that tell an interesting story**
   - At least two charts should be incorporated into the dashboard view of the site
   - Each chart should describe a different aspect of the dataset
 
@@ -26,23 +26,28 @@ The following **optional** features are implemented:
 
 - [x] The site’s customized dashboard contains more content that explains what is interesting about the data 
   - e.g., an additional description, graph annotation, suggestion for which filters to use, or an additional page that explains more about the data
-  - *More information about the dashboard and data was added in the About page*
-- [ ] The site allows users to toggle between different data visualizations
+- [x] The site allows users to toggle between different data visualizations
   - User should be able to use some mechanism to toggle between displaying and hiding visualizations 
 
-  
-The following **additional** features are implemented:
-
-* [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+Here's a walkthrough of implemented user stories:
+
+[![Walkthrough](https://img.youtube.com/vi/UgU458DaYfA/0.jpg)](https://www.youtube.com/watch?v=UgU458DaYfA)
+
+
+Walkthrough Link: [https://youtu.be/UgU458DaYfA]
+
+Walkthrough created with:
+[Youtube](https://www.youtube.com/)
+
+<!-- <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+<!-- GIF created with ...   -->
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -50,7 +55,8 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+One major challenge I faced was styling
+
 
 ## License
 
